@@ -1,0 +1,6 @@
+#Ignore below files uploading to git
+.classpath
+.project
+*.html
+target
+.settings

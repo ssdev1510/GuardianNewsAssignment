@@ -1,4 +1,0 @@
-2023-07-07 16:23:08.947 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Guardian URL in browser
-2023-07-07 16:23:09.000 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - First article headline from The Guardian New - The Ashes 2023: England v Australia, third Test, day two – live
-2023-07-07 16:23:15.979 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on google found - 7
-2023-07-07 16:23:19.505 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on BBC found - 10

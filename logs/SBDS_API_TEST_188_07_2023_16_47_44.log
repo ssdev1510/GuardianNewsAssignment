@@ -1,0 +1,4 @@
+2023-07-07 16:47:50.352 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Guardian URL in browser
+2023-07-07 16:47:50.412 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - First article headline from The Guardian New - US wage growth stronger than expected in June, but job creation slows – business live
+2023-07-07 16:47:55.906 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on google found - 3
+2023-07-07 16:47:59.827 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on BBC found - 3

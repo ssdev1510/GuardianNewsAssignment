@@ -11,15 +11,11 @@ import io.cucumber.testng.CucumberOptions;
  * -dryRun: to check the mapping is proper between feature file and step definition file
  */
 
-@CucumberOptions(
-		features = {"src/test/resources/features/"}, 
-				glue= {"stepDefinitions"}, //
-			    plugin= {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", 
-			    		"html:target/html_reports/cucumber-reports"},
-			    //tags = "@TEST",
-			    monochrome = true,
-				dryRun = false )
+@CucumberOptions(features = "src/test/resources/features", glue = "stepDefinitions", //
+		plugin = { "pretty", "html:target/html_reports/cucumber-reports", "json:target/cucumber.json" },
+		// tags = "@p1",
+		monochrome = true, dryRun = false)
 
-public class TestRunner extends AbstractTestNGCucumberTests{
+public class TestRunner extends AbstractTestNGCucumberTests {
 
 }

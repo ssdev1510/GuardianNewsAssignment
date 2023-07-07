@@ -1,4 +1,0 @@
-2023-07-07 16:33:53.815 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Guardian URL in browser
-2023-07-07 16:33:53.969 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - First article headline from The Guardian New - Wimbledon 2023: Alcaraz and Norrie in action, Sabalenka goes through – live
-2023-07-07 16:34:01.746 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on google found - 2
-2023-07-07 16:34:05.908 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on BBC found - 1

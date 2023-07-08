@@ -1,3 +1,3 @@
 #Docker File to run tests in container
-
-From selenium/standalone-chrome:latests
+FROM selenium/standalone-chrome
+#WORKDIR /appnew

@@ -1,7 +1,5 @@
 package pageObjects;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +8,6 @@ import utils.TestUtils;
 public class GuardianNewsPO {
 
 	private WebDriver driver;
-	// private static Logger Log = LogManager.getLogger();
 
 	public GuardianNewsPO(WebDriver driver) {
 		this.driver = driver;
@@ -25,6 +22,11 @@ public class GuardianNewsPO {
 		return firstNewsDetails.getText();
 	}
 
+	/**
+	 * Check here if Guardian news article matching with other sources news articles
+	 * 
+	 * @return : True incase article match otherwise false incase of false news
+	 **/
 	public boolean isNewsArticleValidOrInvalid(int googleCount, int BBCCount, int expectedCount) {
 		return TestUtils.checkOtherResoucesCountGreaterOrEqualTwo(googleCount, BBCCount, expectedCount);
 	}

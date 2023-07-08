@@ -11,8 +11,11 @@ public class TestUtils {
 
 	private static Logger Log = LogManager.getLogger();
 
-	// Getting the value from config.property file
-	// @Return: Value of passed key from config.properties file
+	/**
+	 * Getting the value from config.property file
+	 * 
+	 * @Return: Value of passed key from config.properties file
+	 **/
 	public static String getConfigProperty(String key) throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fstream = new FileInputStream("src//test//resources//configs//config.properties");
@@ -21,10 +24,12 @@ public class TestUtils {
 		return prop.getProperty(key);
 	}
 
-	// Check the score of two strings how much it matches. If the percentage is more
-	// than 30% than it is return true otherwise false
-	// @Return : Boolean > True in case of two string matching score is greater than
-	// 30 other wise false
+	/**
+	 * Generate the score of percentage of matching two strings. If the percentage
+	 * is more than 50% than it is return true otherwise false.
+	 * @Return : Boolean > True in case of two string matching score is greater than
+	 *         50 percentage other wise false
+	 **/
 	public static boolean checkStringsSimilarityScore(String guardianNews, String otherSourceNews) {
 		boolean result = false;
 		int count = 0;
@@ -48,10 +53,13 @@ public class TestUtils {
 		return result;
 	}
 
-	// Get number of similar articles from other sources
-	// @Return : integer > number of articles
-	public static boolean checkOtherResoucesCountGreaterOrEqualTwo(int googleCount, int BBCCount, int expectedCouunt) {
-		return googleCount >= expectedCouunt || BBCCount >= expectedCouunt;
+	/**
+	 * Get count of similar articles from other sources and match with expected count
+	 * 
+	 * @Return : Boolean : True in case matching expected count otherwise false
+	 **/
+	public static boolean checkOtherResoucesCountGreaterOrEqualTwo(int googleCount, int BBCCount, int expectedCount) {
+		return googleCount >= expectedCount || BBCCount >= expectedCount;
 
 	}
 

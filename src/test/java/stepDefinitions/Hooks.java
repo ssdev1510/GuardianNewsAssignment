@@ -6,6 +6,11 @@ import testBase.TestBase;
 
 public class Hooks extends TestBase {
 
+	/**
+	 * Before test will run before every scenario.
+	 * Here getting isHeadless value from system environment.
+	 * You can setup the environment variable using "-DisHeadless=true"
+	 */
 	@Before()
 	public void setup() {
 		boolean isHeadless = false;
@@ -19,6 +24,9 @@ public class Hooks extends TestBase {
 		getDriver(isHeadless);
 	}
 
+	/**
+	 * After test will run after every scenario.
+	 */
 	@After()
 	public void teardown() {
 		quitDriver();

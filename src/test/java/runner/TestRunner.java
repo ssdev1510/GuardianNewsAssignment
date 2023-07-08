@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 /* -TestRunner Class
  * -features: the path of the feature files 
  * -glue: the path of the step definition files
- * -tags: tags which need to be execute.
+ * -tags: tags which need to be execute. You can also set tags in environment variable by using "-Dcucumber.filter.tags="@p1" 
  * -monochrome: display the console output in a proper readable format
  * -dryRun: to check the mapping is proper between feature file and step definition file
  */

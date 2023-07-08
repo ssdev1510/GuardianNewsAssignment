@@ -21,7 +21,7 @@ public class GuardianNewsTestStepDef extends TestBase {
 	// private WebDriver driver;
 	private static Logger Log = LogManager.getLogger();
 	private GuardianNewsPO guardianNewsPO;
-	private String FirstArticleDetails;
+	private String GuardianNewsDetails;
 	private int countGoogle, countBBC;
 
 	@Given("User launch The Guardian URL and navigate to news page {string}")
@@ -35,12 +35,19 @@ public class GuardianNewsTestStepDef extends TestBase {
 
 	@Given("User reterive the first news article details from the Guardian news page")
 	public void user_reterive_the_first_news_article_details_from_the_guardian_news_page() {
-		FirstArticleDetails = guardianNewsPO.reteriveDetails();
+		GuardianNewsDetails = guardianNewsPO.reteriveFirstNewsDetails();
 
-		Log.info("First article headline from The Guardian New - " + FirstArticleDetails);
+		Log.info("First article headline from The Guardian New - " + GuardianNewsDetails);
 
 	}
-
+	
+	@Given("User reterive the second news article details from the Guardian news page")
+	public void user_reterive_the_second_news_article_details_from_the_guardian_news_page() {
+		GuardianNewsDetails = guardianNewsPO.reteriveSecondNewsDetails();
+		
+		Log.info("First article headline from The Guardian New - " + GuardianNewsDetails);
+	}
+	
 	@When("User perform search the same news article on Google and obtains the number of similar articles on Google")
 	public void user_perform_search_the_same_news_article_on_google_and_obtains_the_number_of_similar_articles_on_google()
 			throws IOException {
@@ -48,9 +55,9 @@ public class GuardianNewsTestStepDef extends TestBase {
 
 		GoogleNewsPO googleNewsPO = new GoogleNewsPO(driver);
 		googleNewsPO.acceptGoogleCookies();
-		googleNewsPO.enterNewsArticleInGoogleSearchBox(FirstArticleDetails);
+		googleNewsPO.enterNewsArticleInGoogleSearchBox(GuardianNewsDetails);
 		googleNewsPO.enterAndSearchSimilarNewsArticleOnGoogle();
-		countGoogle = googleNewsPO.getCountFromGoogleResult(FirstArticleDetails);
+		countGoogle = googleNewsPO.getCountFromGoogleResult(GuardianNewsDetails);
 
 		Log.info("Count of similar news article found on google found - " + countGoogle);
 	}
@@ -61,9 +68,9 @@ public class GuardianNewsTestStepDef extends TestBase {
 		driver.navigate().to(TestUtils.getConfigProperty("BBCNewsURL"));
 
 		BBCNewsPO bbcNewsPO = new BBCNewsPO(driver);
-		bbcNewsPO.enterNewsArticleInBBCSearchBox(FirstArticleDetails);
+		bbcNewsPO.enterNewsArticleInBBCSearchBox(GuardianNewsDetails);
 		bbcNewsPO.enterAndSearchSimilarNewsArticleBBC();
-		countBBC = bbcNewsPO.getCountFromBBCResult(FirstArticleDetails);
+		countBBC = bbcNewsPO.getCountFromBBCResult(GuardianNewsDetails);
 
 		Log.info("Count of similar news article found on BBC found - " + countBBC);
 	}

@@ -1,8 +1,12 @@
 package testBase;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TestBase {
 
@@ -14,11 +18,19 @@ public class TestBase {
 	 **/
 	public static WebDriver getDriver(boolean isHeadless) {
 		ChromeOptions options = new ChromeOptions();
-
+		//isHeadless = true;
 		if (isHeadless) {
-			options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-		}
-		driver = new ChromeDriver(options);
+			//options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
+			options.setCapability("browserVersion", "67");
+			options.setCapability("platformName", "Windows XP");
+			try {
+				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+			} catch (MalformedURLException e) {
+				
+				e.printStackTrace();
+			}
+		}else {
+		driver = new ChromeDriver(options);}
 		return driver;
 	}
 

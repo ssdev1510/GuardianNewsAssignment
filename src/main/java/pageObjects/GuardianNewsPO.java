@@ -15,11 +15,17 @@ public class GuardianNewsPO {
 
 	// Locators
 	private By firstNewsDetailsElement = By.xpath("(//*[@class='fc-item__title'])[1]/a/span/span");
+	private By secondNewsDetailsElement = By.xpath("(//*[@class='fc-item__title'])[2]/a/span/span");
 
 	// Page object class actions
-	public String reteriveDetails() {
+	public String reteriveFirstNewsDetails() {
 		WebElement firstNewsDetails = driver.findElement(firstNewsDetailsElement);
 		return firstNewsDetails.getText();
+	}
+	
+	public String reteriveSecondNewsDetails() {
+		WebElement secondNewsDetails = driver.findElement(secondNewsDetailsElement);
+		return secondNewsDetails.getText();
 	}
 
 	/**
@@ -30,5 +36,7 @@ public class GuardianNewsPO {
 	public boolean isNewsArticleValidOrInvalid(int googleCount, int BBCCount, int expectedCount) {
 		return TestUtils.checkOtherResoucesCountGreaterOrEqualTwo(googleCount, BBCCount, expectedCount);
 	}
+
+
 
 }

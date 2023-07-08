@@ -2,15 +2,12 @@ package stepDefinitions;
 
 import io.cucumber.java.en.When;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import utils.TestUtils;
@@ -21,7 +18,7 @@ import testBase.TestBase;
 
 public class GuardianNewsTestStepDef extends TestBase {
 
-	//private WebDriver driver;
+	// private WebDriver driver;
 	private static Logger Log = LogManager.getLogger();
 	private GuardianNewsPO guardianNewsPO;
 	private String FirstArticleDetails;
@@ -29,18 +26,11 @@ public class GuardianNewsTestStepDef extends TestBase {
 
 	@Given("User launch The Guardian URL and navigate to news page {string}")
 	public void user_launch_the_guardian_url_and_navigate_to_news_page(String endPoint) throws IOException {
-		//boolean isHeadless = false;
-		//if (System.getProperty("isHeadless").equalsIgnoreCase("true")) {
-		//	isHeadless = true;
-		//} else {isHeadless = false;}
-		//driver = getDriver(isHeadless);
 		// driver = new ChromeDriver();
-		
 		driver.get(TestUtils.getConfigProperty("guardianNewsURL") + endPoint);
 		guardianNewsPO = new GuardianNewsPO(driver);
 
 		Log.info("Opening Guardian URL in browser");
-
 	}
 
 	@Given("User reterive the first news article details from the Guardian news page")
@@ -86,5 +76,4 @@ public class GuardianNewsTestStepDef extends TestBase {
 				"News from The Guardian is invalid ");
 	}
 
-	
 }

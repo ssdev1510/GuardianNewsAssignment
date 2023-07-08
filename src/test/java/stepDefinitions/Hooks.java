@@ -1,7 +1,5 @@
 package stepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import testBase.TestBase;

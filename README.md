@@ -24,12 +24,6 @@
 
 **Note:**
 
-- Assignment is having only GET method using query parameters> But in the framework I tried to handle Get, Post, Put, Delete method as well with both query and path parameters. So, in future if there is need of extension– this framework can easily handle different types of requests.
-- In addition to it, I also included one method for Authentication: which get access token and can be used further in sending requests. 
-- Reports: Spark reporting which generate both html and pdf reports.
-- If you want to see failed scenario in result report: Just uncomment and run below mentioned scenario in feature file.
-  - Intentionally Failing the scenario to view failed test result in report.
-- Both Failed/Passed scenario Test result report screenshot you can find below.
 
 ## **Steps to run at your system/container:**
 **Prerequisite:** Maven, Java, Git installation.

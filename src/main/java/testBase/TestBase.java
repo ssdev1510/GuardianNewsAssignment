@@ -16,19 +16,18 @@ public class TestBase {
 	 * Setting up the driver and activating the session. Case when isHeadless equals
 	 * True > Test will run in headless mode.
 	 **/
-	public static WebDriver getDriver(boolean isHeadless ) {
+	public static WebDriver getDriver(boolean isHeadless, boolean isRemote) {
 		ChromeOptions options = new ChromeOptions();
-	//	boolean IsRemote = false;
 		if (isHeadless) {
 			options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
-		//	driver = new ChromeDriver(options);
-	//	} else if (IsRemote) {
-			//options.setCapability("browserVersion", "67");
-		//	options.setCapability("platformName", "Windows XP");
-			try {
-				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
+			if (isRemote) {
+				try {
+					driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+				} catch (MalformedURLException e) {
+					e.printStackTrace();
+				}
+			} else {
+				driver = new ChromeDriver(options);
 			}
 		} else {
 			driver = new ChromeDriver(options);

@@ -4,7 +4,55 @@
 
 - Automation Tool: Selenium (Java Library)
 - Test automation framework: Cucumber
-- Reporting: Cucmber Default reporting.
+- Reporting: Cucumber Default reporting.
 - Build tool: Maven
 - Java as coding Language
 - Docker for Containerization
+
+## Selenium-Cucumber-Automation-Framework.
+  **This framework contains:**
+- Runner class > Defines which feature/step Definitions/Reports Plugins to include in test.
+- Step Definitions class > Defines implementation of test scenarios defined in feature file.
+- Feature file > Defines the Test scenarios in Gherkin language.
+- TestUtils class > Define methods like String Similarity Score(Check if news matches with other sources), Validates authenticity of Guardian news, FileInputStream.
+- TestBase >  Defines WebDriver methods (setup, tearDown) using ChromeOptions & RemoteWebDriver.
+- config.properties file > Defines url's and endPoints.
+- 3 Scenarios: “GuardianNewsTest.feature”
+  - Verify Authenticity of The Guardians First News Article by checking on other sources
+  - Authenticity of The Guardians Second News Article by checking on other sources
+  - Negative scenario:  
+
+**Note:**
+
+- Assignment is having only GET method using query parameters> But in the framework I tried to handle Get, Post, Put, Delete method as well with both query and path parameters. So, in future if there is need of extension– this framework can easily handle different types of requests.
+- In addition to it, I also included one method for Authentication: which get access token and can be used further in sending requests. 
+- Reports: Spark reporting which generate both html and pdf reports.
+- If you want to see failed scenario in result report: Just uncomment and run below mentioned scenario in feature file.
+  - Intentionally Failing the scenario to view failed test result in report.
+- Both Failed/Passed scenario Test result report screenshot you can find below.
+
+## **Steps to run at your system/container:**
+**Prerequisite:** Maven, Java, Git installation.
+
+- Run "git clone https://github.com/ssdev1510/GuardianNewsAssignment.git" to Clone the repository.
+- Run "cd GuardianNewsAssignment" to Go inside directory.
+- Run "mvn clean"
+- Run "mvn test -DisHeadless=true" (Incase you want to run tests in non headless mode then mark it false)
+- Check the test result report as mentioned in below section.
+
+## **Steps to run at Docker Container:**
+**Prerequisite:** Docker, Maven, Java, Git installation.
+- Run "git clone https://github.com/ssdev1510/GuardianNewsAssignment.git" to Clone the repository.
+- Run "cd GuardianNewsAssignment" to Go inside directory.
+- Run "sudo docker build -t guardian_selenium_test_image ." to Build docker image from Dockerfile.
+- Run "docker run --name guardian_test_image_name -d -p 4444:4444 --shm-size="2g" guardian_selenium_test_image" Runs docker container to start Standalone Chrome container.
+- Run "mvn clean test -DisHeadless=true" Running maven commands to execute tests in headless mode.
+- Run "docker rm guardian_test_image_name" to Remove docker container.
+- Run "docker rmi guardian_test_image_name" to  Remove docker image.
+- Check the test result report as mentioned in below section.
+
+**Note:** Using Shell Scipt: Above mentioned steps can also be executed in one go.
+- Run "git clone https://github.com/ssdev1510/GuardianNewsAssignment.git" to Clone the repository.
+- Run "cd GuardianNewsAssignment" to Go inside directory.
+- Run "sudo bash ./seleniumRemoteTest.sh" to execute shell script.
+- Check the test result report as mentioned in below section.

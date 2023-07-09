@@ -14,6 +14,7 @@ public class Hooks extends TestBase {
 	@Before()
 	public void setup() {
 		boolean isHeadless = false;
+		boolean isRemote = false;
 		try {
 			if (System.getProperty("isHeadless").equalsIgnoreCase("true")) {
 				isHeadless = true;
@@ -21,7 +22,7 @@ public class Hooks extends TestBase {
 		} catch (Exception e) {
 			isHeadless = false;
 		}
-		getDriver(isHeadless);
+		getDriver(isHeadless, isRemote);
 	}
 
 	/**

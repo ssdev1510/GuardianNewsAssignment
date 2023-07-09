@@ -12,14 +12,14 @@
 
 #Building image from Dockerfile
 echo ">>>> Creating image from docker file with name guardian__selenium_test_image <<<<"
-sudo docker build -t guardian_selenium_test_image .
+docker build -t guardian_selenium_test_image .
 
 #Running below command to start Selenium Standalone Chrome container 
 echo ">>>> Running docker container to start Standalone Chrome container<<<<"
 docker run --name guardian_test_image_name -d -p 4444:4444 --shm-size="2g" guardian_selenium_test_image 
 
-#Running below the maven commands to execute selenium tests
-echo ">>>> Running maven commands to execute tests <<<<"
+#Running below the maven commands to execute selenium tests in headless mode
+echo ">>>> Running maven commands to execute tests in headless mode <<<<"
 mvn clean test -DisHeadless=true
 
 #Removing docker container

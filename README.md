@@ -18,9 +18,9 @@
 - TestBase >  Defines WebDriver methods (setup, tearDown) using ChromeOptions & RemoteWebDriver.
 - config.properties file > Defines url's and endPoints.
 - 3 Scenarios: “GuardianNewsTest.feature”
-  - Verify Authenticity of The Guardians First News Article by checking on other sources
-  - Authenticity of The Guardians Second News Article by checking on other sources
-  - Negative scenario:  
+  - Verify the authenticity of The Guardian's first news article by cross-referencing with other sources to validate its accuracy.
+  - Verify the authenticity of The Guardian's second news article by cross-referencing with other sources to validate its accuracy.
+  - Invalidate the authenticity of The Guardians first news article by cross-referencing with other sources to invalidate its accuracy.
 
 **Note:**
 

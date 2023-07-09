@@ -75,11 +75,17 @@ public class GuardianNewsTestStepDef extends TestBase {
 		Log.info("Count of similar news article found on BBC found - " + countBBC);
 	}
 
-	@Then("The news article from Guardian news page should considered valid if the number of similar articles on other sources is greater than or equal to {int}")
+	@Then("The news article from Guardian news page should be considered valid if the number of similar articles on other sources is greater than or equal to {int}")
 	public void the_news_article_from_guardian_news_page_should_considered_valid_if_the_number_of_similar_articles_on_other_sources_is_greater_than_or_equal_to(
 			Integer expectedCount) {
 
 		Assert.assertTrue(guardianNewsPO.isNewsArticleValidOrInvalid(countGoogle, countBBC, expectedCount),
+				"News from The Guardian is not valid ");
+	}
+	
+	@Then("The news article from Guardian news page should be considered Invalid if the number of similar articles on other sources is less than {int}")
+	public void the_news_article_from_guardian_news_page_should_be_considered_invalid_if_the_number_of_similar_articles_on_other_sources_is_less_than(Integer expectedCount) {
+		Assert.assertFalse(guardianNewsPO.isNewsArticleValidOrInvalid(countGoogle, countBBC, expectedCount),
 				"News from The Guardian is invalid ");
 	}
 

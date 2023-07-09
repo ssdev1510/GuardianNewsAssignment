@@ -7,26 +7,25 @@ import testBase.TestBase;
 public class Hooks extends TestBase {
 
 	/**
-	 * Before test will run before every scenario.
-	 * Here getting isHeadless value from system environment.
-	 * You can setup the environment variable using "-DisHeadless=true"
+	 * Before annotation > Setup test method will run before start of every scenario.
+	 * Here getting isRemote value from system environment.
+	 * You can setup the environment variable using "-DisRemote=true"
 	 */
 	@Before()
 	public void setup() {
-		boolean isHeadless = false;
 		boolean isRemote = false;
 		try {
-			if (System.getProperty("isHeadless").equalsIgnoreCase("true")) {
-				isHeadless = true;
+			if (System.getProperty("isRemote").equalsIgnoreCase("true")) {
+				isRemote = true;
 			}
 		} catch (Exception e) {
-			isHeadless = false;
+			isRemote = false;
 		}
-		getDriver(isHeadless, isRemote);
+		getDriver(isRemote);
 	}
 
 	/**
-	 * After test will run after every scenario.
+	 * After annotation > teardown test will run after end of every scenario.
 	 */
 	@After()
 	public void teardown() {

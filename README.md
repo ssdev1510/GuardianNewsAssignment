@@ -41,7 +41,8 @@
 - Run "cd GuardianNewsAssignment" to Go inside directory.
 - Run "sudo docker build -t guardian_selenium_test_image ." to Build docker image from Dockerfile.
 - Run "docker run --name guardian_test_image_name -d -p 4444:4444 --shm-size="2g" guardian_selenium_test_image" Starts Standalone Chrome container.
-- Run "mvn clean test -DisRemote=true" Running maven commands to execute tests in headless mode inside docker container.
+- Run "mvn clean test -DisRemote=true" Execute tests in headless mode inside docker container.
+- Run "docker stop guardian_test_image_name" to stop docker container.
 - Run "docker rm guardian_test_image_name" to Remove docker container.
 - Run "docker rmi guardian_selenium_test_image" to  Remove docker image.
 - Check the test result report as mentioned in below section.
@@ -63,10 +64,10 @@
 <kbd>![Alt text](/readmeImages/directory.png?raw=true)</kbd>
 
 ## **Test output from Terminal:**
-- Run 2 test scenario (Skipped negative scenario)
+- Executed 2 test scenario (Skipped negative scenario)
 <kbd>![Alt text](/readmeImages/buildSuccess.png?raw=true)</kbd>
 
-- Run 3 test scenario in Headless mode using Docker Selenium/Standalone Server
+- Executed 3 test scenario in Headless mode using Docker Selenium/Standalone Server (Output intent to be failed because of Negative tc)
 <kbd>![Alt text](/readmeImages/buildSuccess2.png?raw=true)</kbd>
 
 ## **Reports**:

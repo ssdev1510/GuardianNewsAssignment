@@ -1,0 +1,30 @@
+2023-07-11 16:47:10.349 [main] INFO  testBase.TestBase - Opening browser in frontend....
+2023-07-11 16:47:11.512 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Guardian URL in browser
+2023-07-11 16:47:11.564 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - First article headline from The Guardian New - Live
+County cricket: Surrey v Nottinghamshire, Somerset v Hampshire, and more – live
+2023-07-11 16:47:12.077 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Google News in browser
+2023-07-11 16:47:16.636 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on google-- 2
+2023-07-11 16:47:17.363 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening BBC News URL in browser
+2023-07-11 16:47:18.885 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on BBC-- 0
+2023-07-11 16:47:18.886 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Verifying if The Guardian news is valid
+2023-07-11 16:47:19.000 [main] INFO  testBase.TestBase - Closing browser....
+2023-07-11 16:47:21.263 [main] INFO  testBase.TestBase - Opening browser in frontend....
+2023-07-11 16:47:23.491 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Guardian URL in browser
+2023-07-11 16:47:23.555 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - First article headline from The Guardian New - Live
+Trump documents trial judge sets first hearing; Georgia grand jury set to weigh 2020 election charges – live
+2023-07-11 16:47:24.349 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Google News in browser
+2023-07-11 16:47:29.737 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on google-- 2
+2023-07-11 16:47:30.513 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening BBC News URL in browser
+2023-07-11 16:47:32.180 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on BBC-- 0
+2023-07-11 16:47:32.181 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Verifying if The Guardian news is valid
+2023-07-11 16:47:32.283 [main] INFO  testBase.TestBase - Closing browser....
+2023-07-11 16:47:34.435 [main] INFO  testBase.TestBase - Opening browser in frontend....
+2023-07-11 16:47:35.627 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Guardian URL in browser
+2023-07-11 16:47:35.674 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - First article headline from The Guardian New - Live
+Wimbledon quarter-finals: Vondrousova stuns Pegula, Swiatek v Svitolina – live
+2023-07-11 16:47:36.367 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening Google News in browser
+2023-07-11 16:47:41.659 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on google-- 2
+2023-07-11 16:47:42.320 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Opening BBC News URL in browser
+2023-07-11 16:47:43.999 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Count of similar news article found on BBC-- 0
+2023-07-11 16:47:44.000 [main] INFO  stepDefinitions.GuardianNewsTestStepDef - Verifying if The Guardian news is Invalid
+2023-07-11 16:47:44.107 [main] INFO  testBase.TestBase - Closing browser....

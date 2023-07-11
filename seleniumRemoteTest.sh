@@ -20,7 +20,11 @@ docker run --name guardian_test_image_name -d -p 4444:4444 --shm-size="2g" guard
 
 #Running below the maven commands to execute selenium tests in headless mode
 echo ">>>> Running maven commands to execute tests in headless mode <<<<"
-mvn clean test -DisHeadless=true
+mvn clean test -DisRemote=true
+
+#Stopping docker container
+echo ">>>> Stopping Docker Container <<<<"
+docker stop guardian_test_image_name
 
 #Removing docker container
 echo ">>>> Removing Docker Container <<<<"
@@ -28,7 +32,7 @@ docker rm guardian_test_image_name
 
 #Removing docker image
 echo ">>>> Removing Docker Image <<<<"
-docker rmi guardian_test_image_name
+docker rmi guardian_selenium_test_image
 
 #Check Test result report.
 echo ">>>> Please check the Test Result Report under /target/html_reports/index.html <<<<"

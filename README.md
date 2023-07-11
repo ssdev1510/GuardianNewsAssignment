@@ -63,7 +63,11 @@
 <kbd>![Alt text](/readmeImages/directory.png?raw=true)</kbd>
 
 ## **Test output from Terminal:**
+- Run 2 test scenario (Skipped negative scenario)
 <kbd>![Alt text](/readmeImages/buildSuccess.png?raw=true)</kbd>
+
+- Run 3 test scenario in Headless mode using Docker Selenium/Standalone Server
+<kbd>![Alt text](/readmeImages/buildSuccess2.png?raw=true)</kbd>
 
 ## **Reports**:
 <kbd>![Alt text](/readmeImages/testReport.png?raw=true)</kbd>

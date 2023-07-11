@@ -3,9 +3,9 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.TestUtils;
+import utils.Keywords;
 
-public class GuardianNewsPO {
+public class GuardianNewsPO extends Keywords {
 
 	private WebDriver driver;
 
@@ -20,23 +20,11 @@ public class GuardianNewsPO {
 	// Page object class actions
 	public String reteriveFirstNewsDetails() {
 		WebElement firstNewsDetails = driver.findElement(firstNewsDetailsElement);
-		return firstNewsDetails.getText();
+		return getText(firstNewsDetails);
 	}
-	
+
 	public String reteriveSecondNewsDetails() {
 		WebElement secondNewsDetails = driver.findElement(secondNewsDetailsElement);
-		return secondNewsDetails.getText();
+		return getText(secondNewsDetails);
 	}
-
-	/**
-	 * Check here if Guardian news article matching with other sources news articles
-	 * 
-	 * @return : True incase article match otherwise false incase of false news
-	 **/
-	public boolean isNewsArticleValidOrInvalid(int googleCount, int BBCCount, int expectedCount) {
-		return TestUtils.checkOtherResoucesCountGreaterOrEqualTwo(googleCount, BBCCount, expectedCount);
-	}
-
-
-
 }

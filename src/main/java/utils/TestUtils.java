@@ -25,10 +25,11 @@ public class TestUtils {
 	}
 
 	/**
-	 * Generate the score of percentage of matching two strings. If the percentage
-	 * is more than 50% than it is return true otherwise false.
+	 * Generate the percentage score of matching two "news" strings. If the
+	 * percentage is more than 50% than it is return true otherwise false.
+	 * 
 	 * @Return : Boolean > True in case of two string matching score is greater than
-	 *         50 percentage other wise false
+	 *         50 percentage otherwise false.
 	 **/
 	public static boolean checkStringsSimilarityScore(String guardianNews, String otherSourceNews) {
 		boolean result = false;
@@ -54,15 +55,24 @@ public class TestUtils {
 	}
 
 	/**
-	 * Get count of similar articles from other sources and match with expected count
+	 * Get count of similar articles from other sources and match with expected
+	 * count
 	 * 
 	 * @Return : Boolean : True in case matching expected count otherwise false
 	 **/
 	public static boolean checkOtherResoucesCountGreaterOrEqualTwo(int googleCount, int BBCCount, int expectedCount) {
 		return googleCount >= expectedCount || BBCCount >= expectedCount;
-
 	}
 
+	/**
+	 * Check here if Guardian news article matching with other sources news articles
+	 * 
+	 * @return : True incase article match otherwise false incase of false news
+	 **/
+	public static boolean isNewsArticleValidOrInvalid(int googleCount, int BBCCount, int expectedCount) {
+		return TestUtils.checkOtherResoucesCountGreaterOrEqualTwo(googleCount, BBCCount, expectedCount);
+	}
+	
 	// Screenshots
 
 }

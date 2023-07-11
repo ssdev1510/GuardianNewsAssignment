@@ -9,8 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import utils.TestUtils;
-
-public class GoogleNewsPO {
+import utils.Keywords;
+public class GoogleNewsPO extends Keywords {
 
 	private WebDriver driver;
 	private static Logger Log = LogManager.getLogger();
@@ -29,20 +29,20 @@ public class GoogleNewsPO {
 	// Page object class actions
 	public void acceptGoogleCookies() {
 		WebElement googleCookies = driver.findElement(googleCookiesElement);
-		googleCookies.click();
+		clickEle(googleCookies);
 	}
 
 	public void enterNewsArticleInGoogleSearchBox(String FirstArticleDetails) {
 		WebElement googleInputBox = driver.findElement(googleInputBoxElement);
-		googleInputBox.sendKeys(FirstArticleDetails);
+		enterText(googleInputBox, FirstArticleDetails);
 	}
 
 	public void enterAndSearchSimilarNewsArticleOnGoogle() {
 		WebElement googleSearchButton = driver.findElement(googleSearchButtonElement);
-		googleSearchButton.click();
+		clickEle(googleSearchButton);
 
 		WebElement googleNewsButton = driver.findElement(googleNewsButtonElement);
-		googleNewsButton.click();
+		clickEle(googleNewsButton);
 	}
 
 	public int getCountFromGoogleResult(String FirstArticleDetails) {
@@ -50,7 +50,7 @@ public class GoogleNewsPO {
 		List<WebElement> googleResults = driver.findElements(googleResultsElements);
 
 		for (WebElement ele : googleResults) {
-			if (TestUtils.checkStringsSimilarityScore(FirstArticleDetails, ele.getText())) {
+			if (TestUtils.checkStringsSimilarityScore(FirstArticleDetails, getText(ele))) {
 				count++;
 			} else {
 				Log.debug("This News Article on google is not similar to exected news");

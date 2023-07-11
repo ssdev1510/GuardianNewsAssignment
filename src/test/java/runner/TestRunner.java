@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
  */
 
 @CucumberOptions(features = "src/test/resources/features", glue = "stepDefinitions", //
-		plugin = { "pretty", "html:target/html_reports/cucumber-reports.html", "json:target/cucumber.json" },
+		plugin = { "pretty", "html:target/html_reports/index.html", "json:target/cucumber.json" },
 		// tags = "@p1", publish = true,
 		monochrome = true, publish = true, dryRun = false)
 

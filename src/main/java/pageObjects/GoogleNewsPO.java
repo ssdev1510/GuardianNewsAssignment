@@ -24,8 +24,8 @@ public class GoogleNewsPO extends Keywords {
 	private By googleInputBoxElement = By.name("q");
 	private By googleSearchButtonElement = By.xpath("//div[@class='FPdoLc lJ9FBc']/center/input[1]");
 	private By googleNewsButtonElement = By.xpath("//div[@class='nfdoRb']/a[1]");
-	private By googleResultsElements = By.xpath("//div[@class='MjjYud']/div/div/div/div/a/div/div[2]/div[2]");
-
+	private By googleResultsElements = By.xpath("//div[@role='heading']");
+	
 	// Page object class actions
 	public void acceptGoogleCookies() {
 		WebElement googleCookies = driver.findElement(googleCookiesElement);

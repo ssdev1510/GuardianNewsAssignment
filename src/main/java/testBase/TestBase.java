@@ -26,11 +26,13 @@ public class TestBase {
 			try {
 				options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
 				driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+				Log.info("Opening browser in headless mode....");
 			} catch (MalformedURLException e) {
 				Log.debug("Problem with setting up RemoteWebDriver" + e);
 			}
 		} else {
 			driver = new ChromeDriver(options);
+			Log.info("Opening browser in frontend....");
 		}
 		return driver;
 	}
@@ -41,6 +43,7 @@ public class TestBase {
 	public void quitDriver() {
 		if (driver != null) {
 			driver.quit();
+			Log.info("Closing browser....");
 		}
 	}
 }

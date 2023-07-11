@@ -14,10 +14,10 @@ public class GuardianNewsPO extends Keywords {
 	}
 
 	// Locators
-	private By firstNewsDetailsElement = By.xpath("(//*[@class='fc-item__title'])[1]/a/span/span");
-	private By secondNewsDetailsElement = By.xpath("(//*[@class='fc-item__title'])[2]/a/span/span");
+	private By firstNewsDetailsElement = By.xpath("(//*[@class='fc-item__title'])[1]/a");
+	private By secondNewsDetailsElement = By.xpath("(//*[@class='fc-item__title'])[2]/a");
 
-	// Page object class actions
+	// Page object class actions	
 	public String reteriveFirstNewsDetails() {
 		WebElement firstNewsDetails = driver.findElement(firstNewsDetailsElement);
 		return getText(firstNewsDetails);

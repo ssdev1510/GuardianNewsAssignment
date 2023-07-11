@@ -35,6 +35,6 @@ public class Hooks extends TestBase {
 	@After()
 	public void teardown() {
 		quitDriver();
+		
 	}
-
 }

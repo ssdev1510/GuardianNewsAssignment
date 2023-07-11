@@ -80,7 +80,7 @@ public class GuardianNewsTestStepDef extends TestBase {
 			Integer expectedCount) {
 		Log.info("Verifying if The Guardian news is valid");
 		Assert.assertTrue(TestUtils.isNewsArticleValidOrInvalid(countGoogle, countBBC, expectedCount),
-				"News from The Guardian is not valid ");
+				"News from The Guardian is Invalid ");
 	}
 
 	@Then("The news article from Guardian news page should be considered Invalid if the number of similar articles on other sources is less than {int}")
@@ -88,7 +88,7 @@ public class GuardianNewsTestStepDef extends TestBase {
 			Integer expectedCount) {
 		Log.info("Verifying if The Guardian news is Invalid");
 		Assert.assertFalse(TestUtils.isNewsArticleValidOrInvalid(countGoogle, countBBC, expectedCount),
-				"News from The Guardian is invalid ");
+				"News from The Guardian is Valid ");
 	}
 
 }

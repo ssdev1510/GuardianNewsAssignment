@@ -31,4 +31,4 @@ echo ">>>> Removing Docker Image <<<<"
 docker rmi guardian_test_image_name
 
 #Check Test result report.
-echo ">>>> Please check the Test Result Report under /target/test-output/SpartReport/index.html <<<<"
+echo ">>>> Please check the Test Result Report under /target/html_reports/index.html <<<<"
